@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Activity</title>
+    <link rel="stylesheet" href="dist/output.css">
+</head>
+<body>
+
+    <!-- Header Section Start -->
+    <header class="bg-gray-800 text-black p-5">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Record Activity</h1>
+            <nav>
+                <!-- <ul class="flex space-x-4 right-0">
+                    <li><a href="#home" class="hover:text-orange-500">Home</a></li>
+                    <li><a href="#features" class="hover:text-orange-500">Features</a></li>
+                    <li><a href="#about" class="hover:text-orange-500">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-orange-500">Contact</a></li>
+                    <li><a href="#manage-activities" class="hover:text-orange-500">Manage Activities</a></li>
+                    <li><a href="#login" class="hover:text-orange-500">Login</a></li>
+                </ul> -->
+            </nav>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Home Section Start -->
+    <section id="home" class="pt-32 bg-gray-100">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/2 self-center px-4">
+                    <h1 class="text-4xl font-bold mb-5 lg:text-5xl">Kelompok 2 <span class="text-orange-500"><br>Record Activity</span></h1>
+                    <p class="font-medium mb-10 leading-relaxed">Yafi Daffa Andriansyah (20220140083)</p>
+                    <p class="font-medium mb-10 leading-relaxed">Jodi Nur Farkhani (20220140060)</p>
+                    <p class="font-medium mb-10 leading-relaxed">Briliyan Luthfi Triandri (20220140094)</p>
+                    <p class="font-medium mb-10 leading-relaxed">Fikri Baihaqi Adriano (20220140100)</p>
+                    <p class="font-medium mb-10 leading-relaxed">Shabit Hossain (20220140207)</p>
+                    <a href="#" class="bg-orange-500 text-white rounded-full py-3 px-8 hover:bg-black hover:text-orange-500 transition duration-500 ease-in-out font-semibold">Get Started</a>
+                </div>
+                <div class="w-full lg:w-1/2 self-end px-4">
+                    <img src="dist/img/home-picture.png" alt="Record Activity" class="mt-10">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Section End -->
+
+    <!-- Features Section Start -->
+    <!-- <section id="features" class="pt-32 pb-32">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10">Features</h2>
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white shadow-lg p-5 rounded-md">
+                        <h3 class="text-2xl font-bold mb-3">Activity Tracking</h3>
+                        <p>Keep track of your daily activities and monitor your progress over time with detailed logs and insights.</p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white shadow-lg p-5 rounded-md">
+                        <h3 class="text-2xl font-bold mb-3">Goal Setting</h3>
+                        <p>Set personal goals and milestones to stay motivated and focused on your journey towards success.</p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white shadow-lg p-5 rounded-md">
+                        <h3 class="text-2xl font-bold mb-3">Progress Reports</h3>
+                        <p>Generate comprehensive reports to visualize your progress and make informed decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Features Section End -->
+
+    <!-- About Us Section Start -->
+    <!-- <section id="about" class="bg-gray-100 pt-32 pb-32">
+        <div class="container mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold">About Us</h2>
+                <p class="mt-4 text-lg">Learn more about our mission and how we aim to help you achieve your goals.</p>
+            </div>
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-1/2 px-4 mb-8">
+                    <img src="dist/img/community.png" alt="About Us" class="rounded-lg shadow-lg">
+                </div>
+                <div class="w-full lg:w-1/2 px-4 mb-8 self-center">
+                    <p class="text-lg leading-relaxed">At Record Activity, our mission is to empower individuals to track their activities, set meaningful goals, and achieve their fullest potential. We believe that with the right tools and insights, everyone can reach their aspirations and live a fulfilling life. Join us on this journey and start achieving your goals today!</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- About Us Section End -->
+
+    <!-- Manage Activities Section Start -->
+    <section id="manage-activities" class="pt-32 pb-32 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10">Manage Your Activities</h2>
+            <div class="max-w-lg mx-auto">
+                <form id="activity-form" class="mb-4">
+                    <div class="mb-4">
+                        <label for="activity" class="block text-black font-bold mb-2">Activity</label>
+                        <input type="text" id="activity" name="activity" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="bg-orange-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
+                            Add Activity
+                        </button>
+                    </div>
+                </form>
+                <div id="activities-list">
+                    <!-- Activities will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Manage Activities Section End -->
+
+    <!-- Login Section Start -->
+    <!-- <section id="login" class="pt-32 pb-32 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10">Login</h2>
+            <div class="max-w-lg mx-auto">
+                <form id="login-form" class="mb-4">
+                    <div class="mb-4">
+                        <label for="username" class="block text-black font-bold mb-2">Username</label>
+                        <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-black font-bold mb-2">Password</label>
+                        <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="bg-orange-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section> -->
+    <!-- Login Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="pt-32 pb-32 bg-gray-800 text-black">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10">Contact Us</h2>
+            <p class="text-center mb-10">We would love to hear from you! Whether you have questions, feedback, or need assistance, feel free to reach out to us.</p>
+            <form class="max-w-lg mx-auto" action="path/to/your/script" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-300 font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-300 font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                </div>
+                <div class="mb-4">
+                    <label for="subject" class="block text-gray-300 font-bold mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-300 font-bold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required></textarea>
+                </div>
+                <div class="flex items-center justify-center">
+                    <button type="submit" class="bg-orange-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('activity-form');
+            const activitiesList = document.getElementById('activities-list');
+            const loginForm = document.getElementById('login-form');
+            
+            let activities = [];
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const activityInput = document.getElementById('activity');
+                const activity = activityInput.value.trim();
+                if (activity) {
+                    const newActivity = { id: Date.now(), name: activity };
+                    activities.push(newActivity);
+                    renderActivities();
+                    activityInput.value = '';
+                }
+            });
+
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+
+                if (username && password) {
+                    fetch('/api/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ username, password })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Login successful');
+                            // You can redirect to another page or update the UI as needed
+                        } else {
+                            alert('Login failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+            });
+
+            function renderActivities() {
+                activitiesList.innerHTML = activities.map(activity => `
+                    <div class="mb-4 p-4 bg-white shadow-md rounded">
+                        <p class="text-lg">${activity.name}</p>
+                        <button onclick="deleteActivity(${activity.id})" class="text-red-500 hover:text-red-700">Delete</button>
+                    </div>
+                `).join('');
+            }
+
+            window.deleteActivity = function (id) {
+                activities = activities.filter(activity => activity.id !== id);
+                renderActivities();
+            };
+        });
+    </script>
+
+</body>
+</html>
