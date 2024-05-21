@@ -118,31 +118,6 @@
     </section>
     <!-- Manage Activities Section End -->
 
-    <!-- Login Section Start -->
-    <!-- <section id="login" class="pt-32 pb-32 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-10">Login</h2>
-            <div class="max-w-lg mx-auto">
-                <form id="login-form" class="mb-4">
-                    <div class="mb-4">
-                        <label for="username" class="block text-black font-bold mb-2">Username</label>
-                        <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="password" class="block text-black font-bold mb-2">Password</label>
-                        <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <button type="submit" class="bg-orange-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
-                            Login
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section> -->
-    <!-- Login Section End -->
-
     <!-- Contact Section Start -->
     <section id="contact" class="pt-32 pb-32 bg-gray-800 text-black">
         <div class="container mx-auto">
@@ -179,7 +154,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('activity-form');
             const activitiesList = document.getElementById('activities-list');
-            const loginForm = document.getElementById('login-form');
             
             let activities = [];
 
@@ -192,34 +166,6 @@
                     activities.push(newActivity);
                     renderActivities();
                     activityInput.value = '';
-                }
-            });
-
-            loginForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const username = document.getElementById('username').value.trim();
-                const password = document.getElementById('password').value.trim();
-
-                if (username && password) {
-                    fetch('/api/login', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ username, password })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Login successful');
-                            // You can redirect to another page or update the UI as needed
-                        } else {
-                            alert('Login failed');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
                 }
             });
 
