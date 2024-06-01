@@ -11,6 +11,7 @@
     <!-- Header Section Start -->
     <header class="bg-gray-800 text-white p-5">
         <div class="container mx-auto flex justify-between items-center">
+            <a href="homePage.html" class="hover:text-red-500">Back</a>
             <h1 class="text-3xl font-bold">Record Activity</h1>
             <nav>
                 <!-- <ul class="flex space-x-4 right-0">
@@ -26,28 +27,29 @@
     </header>
     <!-- Header Section End -->
 
-    <!-- Home Section Start -->
-    <section id="home" class="pt-32 bg-gray-100">
+    <!-- Manage Activities Section Start -->
+    <section id="manage-activities" class="pt-32 pb-32 bg-gray-100">
         <div class="container mx-auto">
-            <div class="flex flex-wrap">
-                <div class="w-full lg:w-1/2 self-center px-4">
-                    <h1 class="text-4xl font-bold mb-5 lg:text-5xl">Kelompok 2 <span class="text-orange-500"><br>Record Activity</span></h1>
-                    <p class="font-medium mb-10 leading-relaxed">Yafi Daffa Andriansyah (20220140083)</p>
-                    <p class="font-medium mb-10 leading-relaxed">Jodi Nur Farkhani (20220140060)</p>
-                    <p class="font-medium mb-10 leading-relaxed">Briliyan Luthfi Triandri (20220140094)</p>
-                    <p class="font-medium mb-10 leading-relaxed">Fikri Baihaqi Adriano (20220140100)</p>
-                    <p class="font-medium mb-10 leading-relaxed">Shabit Hossain (20220140207)</p>
-                    <a href="record.html" class="bg-orange-500 text-white rounded-3xl p-5 hover:bg-gray-800 hover:text-orange-500 transition duration-500 ease-in-out font-semibold">Get Started</a>
-                </div>
-                <div class="w-full lg:w-1/2 self-end px-4">
-                    <img src="dist/img/home-picture.png" alt="Record Activity" class="mt-10">
+            <h2 class="text-4xl font-bold text-center mb-10">Manage Your Activities</h2>
+            <div class="max-w-lg mx-auto">
+                <form id="activity-form" class="mb-4">
+                    <div class="mb-4">
+                        <label for="activity" class="block text-black font-bold mb-2">Activity</label>
+                        <input type="text" id="activity" name="activity" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="bg-orange-500 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
+                            Add Activity
+                        </button>
+                    </div>
+                </form>
+                <div id="activities-list">
+                    <!-- Activities will be displayed here -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- Home Section End -->
-
-    
+    <!-- Manage Activities Section End -->
 
     <!-- Contact Section Start -->
     <section id="contact" class="pt-32 pb-32 bg-gray-800 text-white">
