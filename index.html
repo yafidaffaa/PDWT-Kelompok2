@@ -23,6 +23,7 @@
             </div>
             <h2 class="text-4xl font-bold text-center mb-10">Login</h2>
             <div class="max-w-lg mx-auto">
+                <form id="login-form">
                     <div class="mb-4">
                         <label for="login-email" class="block text-black font-bold mb-2">Email</label>
                         <input type="email" id="login-email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
@@ -31,17 +32,15 @@
                         <label for="login-password" class="block text-black font-bold mb-2">Password</label>
                         <input type="password" id="login-password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
                     </div>
-                    <a href="homePage.html">
-                        <div class="flex items-center justify-center">
-                            <button type="submit" class="bg-orange-500 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
-                                Login
-                            </button>
-                        </div>
-                    </a>
-                    
+                    <div class="flex items-center justify-center">
+                        <button type="submit" class="bg-orange-500 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
+                            Login
+                        </button>
+                    </div>
+                </form>
                 <a href="regis.html">
                     <div class="flex items-center justify-center mt-10">
-                        <button type="submit" class="bg-orange-500 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
+                        <button type="button" class="bg-orange-500 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
                             Registration
                         </button>
                     </div>
@@ -50,5 +49,20 @@
         </div>
     </section>
     <!-- Login Section End -->
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('login-email').value;
+            var password = document.getElementById('login-password').value;
+
+            if (email === 'admin@gmail.com' && password === 'admin') {
+                window.location.href = 'adminDashboard.html';
+            } else {
+                window.location.href = 'homePage.html';
+            }
+        });
+    </script>
 </body>
 </html>
