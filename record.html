@@ -11,18 +11,8 @@
     <!-- Header Section Start -->
     <header class="bg-gray-800 text-white p-5">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="homePage.html" class="hover:text-red-500">Back</a>
+            <a href="homePage.html" class="hover:text-red-500 left-0">Back</a>
             <h1 class="text-3xl font-bold">Record Activity</h1>
-            <nav>
-                <!-- <ul class="flex space-x-4 right-0">
-                    <li><a href="#home" class="hover:text-orange-500">Home</a></li>
-                    <li><a href="#features" class="hover:text-orange-500">Features</a></li>
-                    <li><a href="#about" class="hover:text-orange-500">About Us</a></li>
-                    <li><a href="#contact" class="hover:text-orange-500">Contact</a></li>
-                    <li><a href="#manage-activities" class="hover:text-orange-500">Manage Activities</a></li>
-                    <li><a href="#login" class="hover:text-orange-500">Login</a></li>
-                </ul> -->
-            </nav>
         </div>
     </header>
     <!-- Header Section End -->
@@ -30,12 +20,15 @@
     <!-- Manage Activities Section Start -->
     <section id="manage-activities" class="pt-32 pb-32 bg-gray-100">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-10">Manage Your Activities</h2>
             <div class="max-w-lg mx-auto">
                 <form id="activity-form" class="mb-4">
                     <div class="mb-4">
                         <label for="activity" class="block text-black font-bold mb-2">Activity</label>
                         <input type="text" id="activity" name="activity" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="timestamp" class="block text-black font-bold mb-2">Time</label>
+                        <input type="datetime-local" id="timestamp" name="timestamp" class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline bg-gray-200" required>
                     </div>
                     <div class="flex items-center justify-center">
                         <button type="submit" class="bg-orange-500 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-all duration-500">
@@ -43,8 +36,19 @@
                         </button>
                     </div>
                 </form>
-                <div id="activities-list">
-                    <!-- Activities will be displayed here -->
+                <div id="activities-list" class="overflow-x-auto">
+                    <table class="min-w-full bg-gray-400 border-collapse border">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 border">Activity</th>
+                                <th class="px-4 py-2 border">Timestamp</th>
+                                <th class="px-4 py-2 border">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activities-tbody">
+                            <!-- Activities will be displayed here -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -86,28 +90,34 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('activity-form');
-            const activitiesList = document.getElementById('activities-list');
+            const activitiesTbody = document.getElementById('activities-tbody');
             
             let activities = [];
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const activityInput = document.getElementById('activity');
+                const timestampInput = document.getElementById('timestamp');
                 const activity = activityInput.value.trim();
-                if (activity) {
-                    const newActivity = { id: Date.now(), name: activity };
+                const timestamp = timestampInput.value.trim();
+                if (activity && timestamp) {
+                    const newActivity = { id: Date.now(), name: activity, timestamp: timestamp };
                     activities.push(newActivity);
                     renderActivities();
                     activityInput.value = '';
+                    timestampInput.value = '';
                 }
             });
 
             function renderActivities() {
-                activitiesList.innerHTML = activities.map(activity => `
-                    <div class="mb-4 p-4 bg-white shadow-md rounded">
-                        <p class="text-lg">${activity.name}</p>
-                        <button onclick="deleteActivity(${activity.id})" class="text-red-500 hover:text-red-700">Delete</button>
-                    </div>
+                activitiesTbody.innerHTML = activities.map(activity => `
+                    <tr>
+                        <td class="border px-4 py-2">${activity.name}</td>
+                        <td class="border px-4 py-2">${activity.timestamp}</td>
+                        <td class="border px-4 py-2 text-center">
+                            <button onclick="deleteActivity(${activity.id})" class="text-red-500 hover:text-red-700">Delete</button>
+                        </td>
+                    </tr>
                 `).join('');
             }
 
